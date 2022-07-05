@@ -3,50 +3,233 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #6c6b6b;
 }
-.header {
-  width: 100%; /* 横幅いっぱい */
-  height: 120px; /* 高さ120px */
-  background-color: red; /* 背景色red */
+
+a {
+  text-decoration: none;
 }
-.header-top {
-  width: 100%;
-  height:70px;
-  background-color: hotpink;
+
+header, nav, h2, .main-visual, footer {
+  font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}/* フォントを変更するfont-familyプロパティ*/
+/* フォント名が日本語の場合は、前後を" "を囲む。2単語以上の英語フォントも同様 */
+header {
+  width: 90%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
-.header-bottom {
-  width: 100%;
-  height:50px;
-  background-color: pink;
+
+.social i {
+  display: inline-block;
+  margin-left: 20px;
 }
+
+.social {
+  position: absolute; /* headerの左上を基準に絶対位置で指定する */
+  top: 22px; /* headerの左上から22px下側へ移動する */
+  right: 22px; /* headerの右上から22px左側へ移動する */
+}
+
+
+header .heading {
+  /* headerタグ内のheadingクラスにのみ反映される */
+  font-size: 32px;
+}
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
 .main-visual {
   width: 100%; /* 横幅いっぱい */
   height: 300px; /* 高さ300px */
-  background-color: orange; /* 背景色orange */
-}
-.main-visual-content {
-  width: 350px;
-  height:300px;
-  background-color: gold;
-}
-.main {
-  width: 100%; /* 横幅いっぱい */
-  height: 1400px; /* 高さ1400px（多めに設定） */
-  background-color: green; /* 背景色green */
-}
-.blog {
-  width: 600px;
-  height: 600px;
-  background-color: limegreen;
-}
-.sidebar {
-  width: 240px;
-  height: 600px;
-  background-color: palegreen;
+  background-image: url(img/mv.jpg);
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center; /* 背景画像を中央に配置 */
 }
 
-.footer {
+.main-visual-content {
+  width: 40%; /* 横幅40% */
+  height: 300px; /* 親の高さに揃える */
+  background-color: rgba(0, 0, 0, 0.5); /* 背景色を半透明の黒にする */
+  text-align: center; /* 文字を中央揃えにする */
+  padding-top: 105px; /* 上側の内側余白で垂直方向の位置を調整 */
+}
+
+.main-visual-text {
+  color: #fff; /* 文字色を白に変更 */
+}
+
+.main-visual-name {
+  margin-top: 30px; /* 上側の外側の余白 */
+  color: #fff; /* 文字色を白に変更 */
+}
+
+main {
+  width: 800px;
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 要素の横並び・中央寄せ */
+  margin: 0 auto; /* 要素の中央揃え */
+  padding: 70px 0; /* 上下に70px、左右に0pxの内側余白 */
+}
+
+.blog {
+  width: 540px;
+  margin-right: 30px; /* 領域の右側余白 */
+}
+
+.blog-heading {
+  border-bottom: 8px solid #f7f7f7;
+  text-align: center;
+  line-height: 0.6;
+  /* 文字の行の高さは40pxになる */
+  /* blog-heading のフォントサイズが10pxの場合、行の高さは0.6倍（15px）になる */
+}
+
+
+.blog-box {
+  padding-top: 50px;
+}
+
+.blog-item {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;/*  Flexboxの利用 */
+  justify-content: flex-start;/*  １と２が横、3が縦 */
+}
+
+.blog-image {
+  height: 180px;
+}
+
+.blog-text {
+  padding: 25px 0 0 30px;
+}
+
+.blog-text-heading {
+  padding-bottom: 15px;
+}
+.blog-date {
+  font-size: 12px;
+  display: inline-block;/*　 改行が入らず横に並ぶ  */
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 8px;
+  background-color: #acabab;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.pagination {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.pagination p {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  color: #fff;
+  background-color: #acabab;
+  border-radius: 3px;
+  line-height: 30px;
+}
+
+
+.sidebar {
+  width: 230px;
+}
+
+.common-heading {
+  border-bottom: 8px solid #f7f7f7;
+  text-align: center;
+  line-height: 0.6;
+   /* フォントサイズが10pxの場合、行の高さは0.6倍（15px）になる */
+}
+.sidebar-contents {
+  padding: 50px 0;
+}
+
+.popular-text,
+.categories-text {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f7f7f7;
+  margin-bottom: 5px;
+}
+
+.popular-text:last-child,/* 最後に記述された要素のみに適用する」という意味 */
+.categories-text:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.instagram .sidebar-contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.instagram-box {
+  width: 110px;
+  padding-top: 110px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.instagram-box:nth-child(odd) {
+  margin: 0 10px 10px 0;
+}
+
+.instagram-box:nth-child(1) {
+  background-image: url(img/airport.jpg);
+}
+
+.instagram-box:nth-child(2) {
+  background-image: url(img/japan.jpg);
+}
+
+.instagram-box:nth-child(3) {
+  background-image: url(img/snow.jpg);
+}
+
+.instagram-box:nth-child(4) {
+  background-image: url(img/japan2.jpg);
+}
+
+.instagram-box:nth-child(5) {
+  background-image: url(img/lake.jpg);
+}
+
+.instagram-box:nth-child(6) {
+  background-image: url(img/road.jpg);
+}
+
+footer {
   width: 100%;
   height: 120px;
-  background-color: blue; /*背景色blue */
+  text-align: center;
+  line-height: 120px;
+  background-color: #848282;
 }
+
+.footer-text {
+  color: #fff;
+}
+
